@@ -4,26 +4,18 @@
         <field name="model">helpdesk_lite.ticket</field>
         <field name="inherit_id" ref="helpdesk_lite.helpdesk_ticket_form_view"/>
         <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button  name="create_application" string="Create Insurance App" type="object" class="oe_highlight" />
+            </xpath>
             <xpath expr="//field[@name='contact_name']" position="after">
                 <!-- Add your fields or attributes here -->
                 <field name="job"/>
                 <field name="phone"/>
-<field name="group_members" invisible="1"/>
                 <field name="ticket_type" invisible="1"/>
+                <field name="sum_insured" attrs="{'invisible': [('ticket_type', 'not in',['motor','personal'])]}"/>
 
 
             </xpath>
-             <xpath expr="//page[1]" position="after">
-                 <page string="Groups" attrs="{'invisible': [('ticket_type', '=','pa')]}">
-                     <field name="group">
-                         <tree>
-                             <field name="range"/>
-                             <field name="size"/>
-
-                         </tree>
-                     </field>
-                 </page>
-             </xpath>
 
         </field>
     </record>

@@ -13,11 +13,13 @@ class HelpDesk(models.Model):
 
     job = fields.Char('Job')
     phone = fields.Char('Phone')
-    ticket_type=fields.Selection([('pa', 'PA'),
-                              ('travel', 'Travel')],
-                              default='pa')
-    group_members=fields.Many2one('Group')
-    group=fields.One2many('group.ticket','group_id',string='Group')
+    ticket_type = fields.Selection([('pa', 'PA'),
+                                    ('travel', 'Travel'), ('medical', 'Medical'), ('motor', 'Motor')],
+                                   default='pa')
+    sum_insured = fields.Float('Sum Insured')
+
+    def create_application(self):
+        print('Write Method')
 
 class HelpDesk(models.Model):
     _inherit = 'helpdesk_lite.stage'
