@@ -11,7 +11,7 @@
                 <!-- Add your fields or attributes here -->
                 <field name="job"/>
                 <field name="phone"/>
-                <field name="ticket_type" invisible="1"/>
+                <field name="ticket_type" />
                 <field name="sum_insured" attrs="{'invisible': [('ticket_type', 'not in',['motor','personal'])]}"/>
 
 

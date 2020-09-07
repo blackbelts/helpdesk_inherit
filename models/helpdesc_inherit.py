@@ -13,7 +13,7 @@ class HelpDesk(models.Model):
 
     job = fields.Char('Job')
     phone = fields.Char('Phone')
-    ticket_type = fields.Selection([('pa', 'PA'),
+    ticket_type = fields.Selection([('personal', 'PA'),
                                     ('travel', 'Travel'), ('medical', 'Medical'), ('motor', 'Motor')],
                                    default='pa')
     sum_insured = fields.Float('Sum Insured')

@@ -1,7 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_policy100_p,policy.policy_p99,model_helpdesk_lite_ticket,base.group_user,1,1,1,1
 access_policy101_p,policy.policy_p198,model_helpdesk_lite_stage,base.group_user,1,1,1,1
-access_policy102_p,policy.policy_p197,model_ticket_api,base.group_user,1,1,1,1
 access_policy103_p,policy.policy_p196,model_group_ticket,base.group_user,1,1,1,1
 
 
