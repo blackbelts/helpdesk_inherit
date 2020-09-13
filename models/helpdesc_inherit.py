@@ -10,7 +10,7 @@ from odoo.exceptions import ValidationError
 from odoo import api, fields, models
 class HelpDesk(models.Model):
     _inherit = 'helpdesk_lite.ticket'
-
+    _name='quoate'
     job = fields.Char('Job')
     phone = fields.Char('Phone')
     ticket_type = fields.Selection([('personal', 'PA'),
@@ -18,17 +18,32 @@ class HelpDesk(models.Model):
                                    default='pa')
     sum_insured = fields.Float('Sum Insured')
 
-    def create_application(self):
-        print('Write Method')
+    # def create_application(self):
+    #     form = self.env.ref('helpdesk_inherit.insurance_app_wizard')
+    #     self.user = True
+    #
+    #     return {
+    #         'name': ('Users'),
+    #         'view_type': 'form',
+    #         'view_mode': 'form',
+    #         'res_model': 'insurance.app.wizard',
+    #         # 'view_id': [(self.env.ref('smart_claim.tree_insurance_claim').id), 'tree'],
+    #         'views': [(form.id, 'form')],
+    #         'type': 'ir.actions.act_window',
+    #         'target': 'new',
+    #
+    #         'context': {'default_contact_name': self.contact_name,
+    #                     'default_phone': self.phone}
+    #
+    #     }
 
 class HelpDesk(models.Model):
     _inherit = 'helpdesk_lite.stage'
+class HelpDesk(models.Model):
+    _inherit = 'helpdesk_lite.ticket'
+    complain=fields.Text('Complain')
 
-class HelpGroup(models.Model):
-        _name = 'group.ticket'
-        range=fields.Char('Range')
-        size=fields.Float('Size')
-        group_id=fields.Many2one('helpdesk_lite.ticket',string='ticket')
+
 
 
 class TicketApi(models.Model):
