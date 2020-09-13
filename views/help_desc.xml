@@ -120,7 +120,7 @@
         <field name="name">Quotes</field>
         <field name="res_model">quoate</field>
         <!--        <field name="view_type">form</field>-->
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <!--        <field name="search_view_id" ref="view_helpdesk_ticket_filter"/>-->
         <!--        <field name="view_ids"-->
         <!--               eval="[(5, 0, 0),-->
