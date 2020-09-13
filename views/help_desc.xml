@@ -13,114 +13,114 @@
 
 <!--            </field>-->
 <!--        </record>-->
-    <record id="help_desk_quoate" model="ir.ui.view">
-        <field name="name">Help Disk Quoate</field>
-        <field name="model">quoate</field>
-        <field name="arch" type="xml">
-            <form>
-                <header>
-            <field name="stage_id" widget="statusbar" clickable="True"
-                           options="{'fold_field': 'fold'}"/>
-                </header>
-                 <div class="oe_button_box" name="button_box">
-                        <button name="toggle_active" type="object" groups="helpdesk_lite.group_helpdesk_lite_manager"
-                                class="oe_stat_button" icon="fa-archive">
-                            <field name="active" widget="boolean_button"
-                                   options='{"terminology": "archive"}'/>
-                        </button>
-                    </div>
-                    <field name="kanban_state" class="oe_inline" widget="kanban_state_selection"/>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name" placeholder="Quoate Summary..."/>
-                        </h1>
-                    </div>
-                <group>
-                    <group>
-                        <field name="job"/>
-                        <field name="phone"/>
-                        <field name="email_from"/>
-                    </group>
-                    <group>
-                        <field name="contact_name" />
-                        <field name="ticket_type" />
-                        <field name="sum_insured" attrs="{'invisible': [('ticket_type', 'not in',['motor','personal'])]}"/>
-                    </group>
-                </group>
+<!--    <record id="help_desk_quoate" model="ir.ui.view">-->
+<!--        <field name="name">Help Disk Quoate</field>-->
+<!--        <field name="model">quoate</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form>-->
+<!--                <header>-->
+<!--            <field name="stage_id" widget="statusbar" clickable="True"-->
+<!--                           options="{'fold_field': 'fold'}"/>-->
+<!--                </header>-->
+<!--                 <div class="oe_button_box" name="button_box">-->
+<!--                        <button name="toggle_active" type="object" groups="helpdesk_lite.group_helpdesk_lite_manager"-->
+<!--                                class="oe_stat_button" icon="fa-archive">-->
+<!--                            <field name="active" widget="boolean_button"-->
+<!--                                   options='{"terminology": "archive"}'/>-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                    <field name="kanban_state" class="oe_inline" widget="kanban_state_selection"/>-->
+<!--                    <div class="oe_title">-->
+<!--                        <h1>-->
+<!--                            <field name="name" placeholder="Quoate Summary..."/>-->
+<!--                        </h1>-->
+<!--                    </div>-->
+<!--                <group>-->
+<!--                    <group>-->
+<!--                        <field name="job"/>-->
+<!--                        <field name="phone"/>-->
+<!--                        <field name="email_from"/>-->
+<!--                    </group>-->
+<!--                    <group>-->
+<!--                        <field name="contact_name" />-->
+<!--                        <field name="ticket_type" />-->
+<!--                        <field name="sum_insured" attrs="{'invisible': [('ticket_type', 'not in',['motor','personal'])]}"/>-->
+<!--                    </group>-->
+<!--                </group>-->
 
-            </form>
-            <!--            </xpath>-->
+<!--            </form>-->
+<!--            &lt;!&ndash;            </xpath>&ndash;&gt;-->
 
-        </field>
-    </record>
-    <record id="helpdesk_ticket_kanban_view_quoate" model="ir.ui.view">
-            <field name="name">quoate.kanban.view</field>
-            <field name="model">quoate</field>
-            <field name="arch" type="xml">
-                <kanban default_group_by="stage_id" class="o_kanban_small_column">
-                    <field name="stage_id" />
-<!--                    <field name="color"/>-->
-<!--                    &lt;!&ndash;<field name="user_email"/>&ndash;&gt;-->
-<!--                    <field name="user_id"/>-->
-<!--                    <field name="date_deadline"/>-->
-<!--                    <field name="message_needaction_counter"/>-->
-                    <field name="active"/>
-                    <field name="legend_blocked"/>
-                    <field name="legend_done"/>
-                    <field name="legend_normal"/>
-                    <templates>
-                        <t t-name="kanban-tooltip">
-                            <ul class="oe_kanban_tooltip">
-                                <li><b>Project:</b> </li>
-                            </ul>
-                        </t>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_semantic_html_override">
-                                <div class="o_dropdown_kanban dropdown" groups="base.group_user">
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record id="helpdesk_ticket_kanban_view_quoate" model="ir.ui.view">-->
+<!--            <field name="name">quoate.kanban.view</field>-->
+<!--            <field name="model">quoate</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <kanban default_group_by="stage_id" class="o_kanban_small_column">-->
+<!--                    <field name="stage_id" />-->
+<!--&lt;!&ndash;                    <field name="color"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    &lt;!&ndash;<field name="user_email"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    <field name="user_id"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <field name="date_deadline"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <field name="message_needaction_counter"/>&ndash;&gt;-->
+<!--                    <field name="active"/>-->
+<!--                    <field name="legend_blocked"/>-->
+<!--                    <field name="legend_done"/>-->
+<!--                    <field name="legend_normal"/>-->
+<!--                    <templates>-->
+<!--                        <t t-name="kanban-tooltip">-->
+<!--                            <ul class="oe_kanban_tooltip">-->
+<!--                                <li><b>Project:</b> </li>-->
+<!--                            </ul>-->
+<!--                        </t>-->
+<!--                        <t t-name="kanban-box">-->
+<!--                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_semantic_html_override">-->
+<!--                                <div class="o_dropdown_kanban dropdown" groups="base.group_user">-->
 
-                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
-                                        <span class="fa fa-bars fa-lg"/>
-                                    </a>
-                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                        <t t-if="widget.editable"><li><a type="edit">Edit ticket</a></li></t>
-                                        <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
-                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
-                                    </ul>
-                                </div>
-                                <div class="oe_kanban_content" tooltip="kanban-tooltip">
-                                    <div>
-                                        <b><field name="name"/></b> <br/>
-                                        <field name="partner_id"/> <br/>
-                                    </div>
-                                    <div class="text-muted">
-                                        <t t-if="record.date_deadline.raw_value and record.date_deadline.raw_value lt (new Date())" t-set="red">oe_kanban_text_red</t>
-                                        <span t-attf-class="#{red || ''}"><i><field name="date_deadline"/></i></span>
-                                    </div>
-                                    <div class="oe_kanban_bottom_left">
-                                        <field name="priority" widget="priority"/>
-                                        <t t-if="record.message_needaction_counter.raw_value">
-                                            <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
-                                        </t>
-                                    </div>
-                                    <div class="oe_kanban_bottom_right">
-                                        <img t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)" t-att-title="record.user_id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/>
-                                        <div class="pull-left" groups="base.group_user">
-                                            <field name="kanban_state" widget="kanban_state_selection"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="oe_clear"></div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
+<!--                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >-->
+<!--                                        <span class="fa fa-bars fa-lg"/>-->
+<!--                                    </a>-->
+<!--                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">-->
+<!--                                        <t t-if="widget.editable"><li><a type="edit">Edit ticket</a></li></t>-->
+<!--                                        <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>-->
+<!--                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                                <div class="oe_kanban_content" tooltip="kanban-tooltip">-->
+<!--                                    <div>-->
+<!--                                        <b><field name="name"/></b> <br/>-->
+<!--                                        <field name="partner_id"/> <br/>-->
+<!--                                    </div>-->
+<!--                                    <div class="text-muted">-->
+<!--                                        <t t-if="record.date_deadline.raw_value and record.date_deadline.raw_value lt (new Date())" t-set="red">oe_kanban_text_red</t>-->
+<!--                                        <span t-attf-class="#{red || ''}"><i><field name="date_deadline"/></i></span>-->
+<!--                                    </div>-->
+<!--                                    <div class="oe_kanban_bottom_left">-->
+<!--                                        <field name="priority" widget="priority"/>-->
+<!--                                        <t t-if="record.message_needaction_counter.raw_value">-->
+<!--                                            <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>-->
+<!--                                        </t>-->
+<!--                                    </div>-->
+<!--                                    <div class="oe_kanban_bottom_right">-->
+<!--                                        <img t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)" t-att-title="record.user_id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/>-->
+<!--                                        <div class="pull-left" groups="base.group_user">-->
+<!--                                            <field name="kanban_state" widget="kanban_state_selection"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="oe_clear"></div>-->
+<!--                            </div>-->
+<!--                        </t>-->
+<!--                    </templates>-->
+<!--                </kanban>-->
+<!--            </field>-->
+<!--        </record>-->
     <record model="ir.actions.act_window" id="quoate_action">
         <field name="name">Quotes</field>
         <field name="res_model">quoate</field>
         <!--        <field name="view_type">form</field>-->
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,form</field>
         <!--        <field name="search_view_id" ref="view_helpdesk_ticket_filter"/>-->
         <!--        <field name="view_ids"-->
         <!--               eval="[(5, 0, 0),-->
