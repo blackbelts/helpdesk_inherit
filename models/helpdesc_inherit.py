@@ -9,14 +9,25 @@ from odoo.exceptions import UserError
 from odoo.exceptions import ValidationError
 from odoo import api, fields, models
 class HelpDesk(models.Model):
-    _inherit = 'helpdesk_lite.ticket'
     _name='quoate'
+    name = fields.Char(string='Ticket', track_visibility='always', required=True)
+    contact_name = fields.Char('Contact Name')
+    email_from = fields.Char('Email', help="Email address of the contact", index=True)
     job = fields.Char('Job')
     phone = fields.Char('Phone')
     ticket_type = fields.Selection([('personal', 'PA'),
                                     ('travel', 'Travel'), ('medical', 'Medical'), ('motor', 'Motor')],
-                                   default='pa')
+                                   default='personal')
     sum_insured = fields.Float('Sum Insured')
+    state = fields.Selection([('new', 'New'),
+                              ('proposal', 'Proposal'),
+                              ('won', 'Won'),
+                              ('canceled', 'Canceled'), ],
+                             'Status', required=True, default='new', copy=False)
+    user_id = fields.Many2one('res.users', string='Assigned to', track_visibility='onchange', index=True, default=False)
+    active = fields.Boolean(default=True)
+
+
 
     # def create_application(self):
     #     form = self.env.ref('helpdesk_inherit.insurance_app_wizard')
