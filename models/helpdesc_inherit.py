@@ -26,6 +26,10 @@ class HelpDesk(models.Model):
                              'Status', required=True, default='new', copy=False)
     user_id = fields.Many2one('res.users', string='Assigned to', track_visibility='onchange', index=True, default=False)
     active = fields.Boolean(default=True)
+    source = fields.Selection([('online', 'Online'),
+                               ('call', 'Call Center'),
+                               ('social', 'Social Media')],
+                              'Source', copy=False)
 
 
 
@@ -53,7 +57,24 @@ class HelpDesk(models.Model):
 class HelpDesk(models.Model):
     _inherit = 'helpdesk_lite.ticket'
     complain=fields.Text('Complain')
-
+    complain_number = fields.Char(string='Application Number', copy=False, index=True)
+    source = fields.Selection([('online', 'Online'),
+                               ('call', 'Call Center'),
+                               ('social', 'Social Media')],
+                              'Source', copy=False)
+    team_id = fields.Many2one('helpdesk_lite.team', string='Complaint Types', index=True)
+    # @api.onchange('stage')
+    def confirm(self):
+        # if self.stage=='InProgress':
+            number = self.env['ir.sequence'].next_by_code('comp_number')
+            currentYear = datetime.today().strftime("%Y")
+            currentMonth = datetime.today().strftime("%m")
+            self.write(
+                {'complain_number': 'COMP' + '/' + currentYear[2:4] + '/' + currentMonth +
+                                       '/' + number})
+class TicketTypes(models.Model):
+     _inherit='helpdesk_lite.team'
+     support_chain = fields.Many2many('res.users', string='Support Chain')
 
 
 

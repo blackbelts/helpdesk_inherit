@@ -13,9 +13,10 @@
 
     # always loaded
     'data': [
-        # 'security/security.xml',
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/help_desc.xml',
+        'views/help_support_team.xml',
 
     ],
     # only loaded in demonstration mode
