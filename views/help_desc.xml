@@ -4,13 +4,17 @@
         <field name="model">helpdesk_lite.ticket</field>
         <field name="inherit_id" ref="helpdesk_lite.helpdesk_ticket_form_view"/>
         <field name="arch" type="xml">
-            <xpath expr="//header" position="inside">
-                <button  name="confirm" string="Confirm" type="object" class="oe_highlight" attrs="{'invisible': [('stage_id', '!=','New')]}"/>
+            <xpath expr="//button[@name='takeit']" position="attributes">
+                <attribute name="invisible">1</attribute>
             </xpath>
 
             <xpath expr="//field[@name='team_id']" position="after">
                 <field name="source"/>
-                <field name="complain_number"/>
+                <!--                <field name="complain_number"/>-->
+            </xpath>
+            <xpath expr="//field[@name='name']" position="replace">
+                <field name="name" placeholder="Complaint Number..." readonly="1" />
+
             </xpath>
             <xpath expr="//page[1]" position="replace">
                 <page string="Complaint">
@@ -30,6 +34,9 @@
             <!--            </xpath>-->
         </field>
     </record>
+    <record model="ir.actions.act_window" id="helpdesk_lite.help_action">
+        <field name="name">Complaint</field>
+    </record>
     <record id="sequence_complain_number" model="ir.sequence">
         <field name="name">comp_number</field>
         <field name="code">comp_number</field>
@@ -42,37 +49,44 @@
         <field name="model">quoate</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <field name="state" widget="statusbar" clickable="1"
-                    />
-                </header>
-                <div class="oe_button_box" name="button_box">
-                    <button name="toggle_active" type="object" groups="helpdesk_lite.group_helpdesk_lite_manager"
-                            class="oe_stat_button" icon="fa-archive">
-                        <field name="active" widget="boolean_button"
-                               options='{"terminology": "archive"}'/>
-                    </button>
-                </div>
-                <!--                    <field name="kanban_state" class="oe_inline" widget="kanban_state_selection"/>-->
-                <div class="oe_title">
-                    <h1>
-                        <field name="name" placeholder="Quoate Summary..."/>
-                    </h1>
-                </div>
-                <group>
+                <sheet>
+                    <header>
+                        <field name="state" widget="statusbar" clickable="1"
+                        />
+                    </header>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" groups="helpdesk_lite.group_helpdesk_lite_manager"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                   options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <!--                    <field name="kanban_state" class="oe_inline" widget="kanban_state_selection"/>-->
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Quoate Summary..."/>
+                        </h1>
+                    </div>
                     <group>
-                        <field name="job"/>
-                        <field name="phone"/>
-                        <field name="email_from"/>
-                        <field name="user_id"/>
-                        <field name="source"/>
+                        <group>
+                            <field name="job"/>
+                            <field name="phone"/>
+                            <field name="email_from"/>
+                            <field name="user_id"/>
+                            <field name="source"/>
+                        </group>
+                        <group>
+                            <field name="contact_name" />
+                            <field name="ticket_type" />
+                            <field name="sum_insured" attrs="{'invisible': [('ticket_type', 'not in',['motor','personal'])]}"/>
+                        </group>
                     </group>
-                    <group>
-                        <field name="contact_name" />
-                        <field name="ticket_type" />
-                        <field name="sum_insured" attrs="{'invisible': [('ticket_type', 'not in',['motor','personal'])]}"/>
-                    </group>
-                </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
 
             </form>
             <!--            </xpath>-->
@@ -160,5 +174,7 @@
     </record>
     <menuitem name="Qoute" id="menu_quoate_act" parent="helpdesk_lite.menu_root"
               action="quoate_action" sequence="30"/>
+    <menuitem name="Complaints" id="helpdesk_lite.menu_tickets_act" parent="helpdesk_lite.menu_root"
+              action="helpdesk_lite.help_action"/>
 
 </odoo>

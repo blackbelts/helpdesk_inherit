@@ -10,6 +10,7 @@ from odoo.exceptions import ValidationError
 from odoo import api, fields, models
 class HelpDesk(models.Model):
     _name='quoate'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     name = fields.Char(string='Ticket', track_visibility='always', required=True)
     contact_name = fields.Char('Contact Name')
     email_from = fields.Char('Email', help="Email address of the contact", index=True)
@@ -54,7 +55,7 @@ class HelpDesk(models.Model):
 
 class HelpDesk(models.Model):
     _inherit = 'helpdesk_lite.stage'
-class HelpDesk(models.Model):
+class HelpDeskTicket(models.Model):
     _inherit = 'helpdesk_lite.ticket'
     complain=fields.Text('Complain')
     complain_number = fields.Char(string='Application Number', copy=False, index=True)
@@ -63,15 +64,16 @@ class HelpDesk(models.Model):
                                ('social', 'Social Media')],
                               'Source', copy=False)
     team_id = fields.Many2one('helpdesk_lite.team', string='Complaint Types', index=True)
-    # @api.onchange('stage')
-    def confirm(self):
-        # if self.stage=='InProgress':
-            number = self.env['ir.sequence'].next_by_code('comp_number')
+    name = fields.Char(string='Ticket', track_visibility='always',required=False)
+
+    @api.model
+    def create(self, vals):
+            serial_no = self.env['ir.sequence'].next_by_code('comp_number')
             currentYear = datetime.today().strftime("%Y")
             currentMonth = datetime.today().strftime("%m")
-            self.write(
-                {'complain_number': 'COMP' + '/' + currentYear[2:4] + '/' + currentMonth +
-                                       '/' + number})
+            vals['name'] = 'COMP' + '/' + currentYear[2:4] + '/' + currentMonth + '/' +serial_no
+            return super(HelpDeskTicket, self).create(vals)
+
 class TicketTypes(models.Model):
      _inherit='helpdesk_lite.team'
      support_chain = fields.Many2many('res.users', string='Support Chain')
