@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_policy101_p,policy.policy_p198,model_helpdesk_lite_stage,base.group_user,1,1,1,1
+access_policy104_p,policy.policy_p197,model_quoate,base.group_user,1,1,1,1
+access_policy105_p,policy.policy_p198,model_ticket_api,base.group_user,1,1,1,1
+
+
+
+
+
+
+
+

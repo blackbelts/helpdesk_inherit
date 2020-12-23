@@ -1,0 +1,476 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* helpdesk_inherit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-05 11:58+0000\n"
+"PO-Revision-Date: 2020-11-05 11:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.quote_kanban_view
+msgid "<b>Project:</b>"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_helpdesk_lite_ticket__complain_number
+msgid "Application Number"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__user_id
+msgid "Assigned to"
+msgstr "مسند إلى"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__helpdesk_lite_ticket__source__call
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__source__call
+msgid "Call Center"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__state__canceled
+msgid "Canceled"
+msgstr "ملغي"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_helpdesk_lite_ticket__complain
+msgid "Complain"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.help_desk_inherit_main
+msgid "Complaint"
+msgstr "شكوى"
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.help_desk_inherit_main
+msgid "Complaint Number..."
+msgstr " رقم الشكوى"
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.help_desk_inherit_main
+msgid "Complaint Summary..."
+msgstr " الشكوى"
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.help_desk_inherit_main_team
+msgid "Complaint Type..."
+msgstr "نوع الشكوى"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_helpdesk_lite_ticket__team_id
+msgid "Complaint Types"
+msgstr " نوع الشكوى"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__contact_name
+msgid "Contact Name"
+msgstr "اسم جهة الاتصال"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__create_uid
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_ticket_api__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__create_date
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_ticket_api__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.quote_kanban_view
+msgid "Delete"
+msgstr "حذف"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__display_name
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_ticket_api__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.quote_kanban_view
+msgid "Edit ticket"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__email_from
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__email_from
+msgid "Email address of the contact"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.quoate_view_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: helpdesk_inherit
+#: model:ir.model,name:helpdesk_inherit.model_helpdesk_lite_ticket
+msgid "Helpdesk Tickets"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__id
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_ticket_api__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى استثناء النشاط"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__message_needaction
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__message_has_error
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__job
+msgid "Job"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate____last_update
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_ticket_api____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__write_uid
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_ticket_api__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__write_date
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_ticket_api__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__ticket_type__medical
+msgid "Medical"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__ticket_type__motor
+msgid "Motor"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__state__new
+msgid "New"
+msgstr "جديد"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__helpdesk_lite_ticket__source__online
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__source__online
+msgid "Online"
+msgstr "متصل"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__ticket_type__personal
+msgid "PA"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__phone
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__state__proposal
+msgid "Proposal"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.ui.menu,name:helpdesk_inherit.menu_quoate_act
+msgid "Qoute"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.help_desk_quoate
+msgid "Quoate Summary..."
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.actions.act_window,name:helpdesk_inherit.quoate_action
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.quoate_view_search
+msgid "Quotes"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__helpdesk_lite_ticket__source__social
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__source__social
+msgid "Social Media"
+msgstr "مواقع التواصل الاجتماعي"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_helpdesk_lite_ticket__source
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__source
+msgid "Source"
+msgstr "المصدر"
+
+#. module: helpdesk_inherit
+#: model:ir.model,name:helpdesk_inherit.model_helpdesk_lite_stage
+msgid "Stage of case"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.quoate_view_search
+msgid "State"
+msgstr "حالة"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة على أساس الأنشطة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__sum_insured
+msgid "Sum Insured"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_helpdesk_lite_team__support_chain
+msgid "Support Chain"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model_terms:ir.ui.view,arch_db:helpdesk_inherit.help_desk_inherit_main_team
+msgid "Support Leader"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model,name:helpdesk_inherit.model_helpdesk_lite_team
+msgid "Support Team"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:res.groups,name:helpdesk_inherit.group_helpdesk_lite_leader
+msgid "Team Leader"
+msgstr "قائد الفريق"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_helpdesk_lite_ticket__name
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__name
+msgid "Ticket"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__ticket_type
+msgid "Ticket Type"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__ticket_type__travel
+msgid "Travel"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,field_description:helpdesk_inherit.field_quoate__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_quoate__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields,help:helpdesk_inherit.field_helpdesk_lite_ticket__team_id
+msgid ""
+"When sending mails, the default email address is taken from the support "
+"team."
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model.fields.selection,name:helpdesk_inherit.selection__quoate__state__won
+msgid "Won"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model_terms:ir.actions.act_window,help:helpdesk_inherit.quoate_action
+msgid "Your Quotes"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model,name:helpdesk_inherit.model_quoate
+msgid "quoate"
+msgstr ""
+
+#. module: helpdesk_inherit
+#: model:ir.model,name:helpdesk_inherit.model_ticket_api
+msgid "ticket.api"
+msgstr ""
