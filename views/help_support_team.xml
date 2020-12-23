@@ -11,7 +11,10 @@
                 <attribute name="placeholder">Complaint Type...</attribute>
             </xpath>
             <xpath expr="//field[@name='user_id']" position="after">
+<<<<<<< HEAD
                 <field name="team_support_type"/>
+=======
+>>>>>>> a480039d115e0cec5ff5aafa39b5ce460fe5628c
                 <field name="support_chain" widget="many2many_tags" />
             </xpath>
         </field>

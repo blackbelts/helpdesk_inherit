@@ -25,6 +25,7 @@ class HelpDesk(models.Model):
                               ('won', 'Won'),
                               ('canceled', 'Canceled'), ],
                              'Status', required=True, default='new', copy=False)
+
     user_id = fields.Many2one('res.users', string='Assigned to', track_visibility='onchange', index=True, default=False,
                               domain="[('id', 'in', support_team.member_ids)]")
     active = fields.Boolean(default=True)
@@ -32,8 +33,8 @@ class HelpDesk(models.Model):
                                ('call', 'Call Center'),
                                ('social', 'Social Media')],
                               'Source', copy=False)
-    support_team = fields.Many2one('helpdesk_lite.team', string='Team')
 
+    support_team = fields.Many2one('helpdesk_lite.team', string='Team')
 
 
 
