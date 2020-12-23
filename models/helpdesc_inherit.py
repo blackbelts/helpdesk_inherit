@@ -27,8 +27,7 @@ class HelpDesk(models.Model):
                              'Status', required=True, default='new', copy=False)
 
     user_id = fields.Many2one('res.users', string='Assigned to', track_visibility='onchange', index=True, default=False,
-                              domain=lambda self: [("id", "in", self.env['helpdesk_lite.team'].search([
-                                  ('id', '=', self.support_team.id)]).member_ids.ids)])
+                              )
     active = fields.Boolean(default=True)
     source = fields.Selection([('online', 'Online'),
                                ('call', 'Call Center'),
@@ -37,8 +36,15 @@ class HelpDesk(models.Model):
 
     support_team = fields.Many2one('helpdesk_lite.team', string='Team')
 
-
-
+    @api.onchange('support_team')
+    def onchange_support_team(self):
+        if self.support_team:
+            # filter products by seller
+            user_ids = self.support_team.member_ids.ids
+            return {'domain': {'user_id': [('id', 'in', user_ids)]}}
+        else:
+            # filter all products -> remove domain
+            return {'domain': {'user_id': []}}
 
     # def create_application(self):
     #     form = self.env.ref('helpdesk_inherit.insurance_app_wizard')
