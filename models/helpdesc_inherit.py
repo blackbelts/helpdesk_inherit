@@ -27,7 +27,8 @@ class HelpDesk(models.Model):
                              'Status', required=True, default='new', copy=False)
 
     user_id = fields.Many2one('res.users', string='Assigned to', track_visibility='onchange', index=True, default=False,
-                              domain="[('id', 'in', support_team.member_ids)]")
+                              domain=lambda self: [("id", "in", self.env['helpdesk_lite.team'].search([
+                                  ('id', '=', self.support_team.id)]).member_ids)])
     active = fields.Boolean(default=True)
     source = fields.Selection([('online', 'Online'),
                                ('call', 'Call Center'),
