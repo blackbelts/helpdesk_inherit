@@ -39,7 +39,7 @@
     <record id="ticket_leader_rule3" model="ir.rule">
             <field name="name">Quote: Manager</field>
             <field name="model_id" ref="model_quoate"/>
-            <field name="domain_force">[('2', '=', user.id)]</field>
+            <field name="domain_force">[(2, '=', int(user.id))]</field>
             <field name="groups" eval="[(4,ref('helpdesk_inherit.group_helpdesk_lite_leader'))]"/>
     </record>
 
