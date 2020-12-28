@@ -53,6 +53,7 @@
                     <header>
                         <field name="state" widget="statusbar" clickable="1"
                         />
+                        <button string="I Take It" type="object" name="takeit" class="oe_highlight" attrs="{'invisible': [('user_id', '!=', False)]}"/>
                     </header>
 <!--                    <div class="oe_button_box" name="button_box">-->
 <!--                        <button name="toggle_active" type="object" groups="helpdesk_lite.group_helpdesk_lite_manager"-->

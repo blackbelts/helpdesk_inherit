@@ -21,6 +21,7 @@ class HelpDesk(models.Model):
                                    default='personal')
     sum_insured = fields.Float('Sum Insured')
     state = fields.Selection([('new', 'New'),
+                              ('verified', 'Verified'),
                               ('proposal', 'Proposal'),
                               ('won', 'Won'),
                               ('canceled', 'Canceled'), ],
@@ -35,6 +36,9 @@ class HelpDesk(models.Model):
                               'Source', copy=False)
 
     support_team = fields.Many2one('helpdesk_lite.team', string='Team')
+
+    def takeit(self):
+        self.user_id = self.env.uid
 
     @api.onchange('support_team')
     def onchange_support_team(self):
