@@ -29,6 +29,7 @@ class HelpDesk(models.Model):
 
     user_id = fields.Many2one('res.users', string='Assigned to', track_visibility='onchange', index=True, default=False,
                               )
+
     active = fields.Boolean(default=True)
     source = fields.Selection([('online', 'Online'),
                                ('call', 'Call Center'),
@@ -39,6 +40,10 @@ class HelpDesk(models.Model):
 
     def takeit(self):
         self.user_id = self.env.uid
+
+    @api.onchange('state')
+    def log_history(self):
+        self.user_id = False
 
     @api.onchange('support_team')
     def onchange_support_team(self):
