@@ -37,14 +37,14 @@ class HelpDesk(models.Model):
                               'Source', copy=False)
 
     support_team = fields.Many2one('helpdesk_lite.team', string='Team')
-    state_history_ids = fields.One2many('state.history', 'quoate_ticket_id')
+    state_history_ids = fields.One2many('ticket.state.history', 'quoate_ticket_id')
 
     def takeit(self):
         self.user_id = self.env.uid
 
     @api.onchange('state')
     def log_history(self):
-        self.env['state.history'].create({"quoate_ticket_id": self.id, "ticket_state": self.state,
+        self.env['ticket.state.history'].create({"quoate_ticket_id": self.id, "ticket_state": self.state,
                                           "datetime": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                                           "user": self.env.uid})
         if self.state == 'verified' or self.state == 'proposal':
@@ -83,7 +83,7 @@ class HelpDesk(models.Model):
     _inherit = 'helpdesk_lite.stage'
 
 class StateHistory(models.Model):
-    _inherit = 'state.history'
+    _name = 'ticket.state.history'
 
     quoate_ticket_id = fields.Many2one('quoate', ondelete='cascade')
     ticket_state = fields.Selection([('new', 'New'),
@@ -92,6 +92,8 @@ class StateHistory(models.Model):
                               ('won', 'Won'),
                               ('canceled', 'Canceled'), ],
                              'State')
+    datetime = fields.Datetime('Date')
+    user = fields.Many2one('res.users', ondelete='cascade')
 
 class HelpDeskTicket(models.Model):
     _inherit = 'helpdesk_lite.ticket'
