@@ -26,13 +26,11 @@
     <record id="group_helpdesk_lite_call_center" model="res.groups">
         <field name="name">Call Center</field>
         <field name="category_id" ref="helpdesk_lite.module_category_helpdesk_lite_management"/>
-        <field name="implied_ids" eval="[(4, ref('helpdesk_lite.group_helpdesk_lite_user'))]"/>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
     <record id="group_helpdesk_lite_sales" model="res.groups">
         <field name="name">Sales</field>
         <field name="category_id" ref="helpdesk_lite.module_category_helpdesk_lite_management"/>
-        <field name="implied_ids" eval="[(4, ref('helpdesk_lite.group_helpdesk_lite_user'))]"/>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
     <record id="ticket_call_center_rule" model="ir.rule">
