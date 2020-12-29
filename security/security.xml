@@ -36,13 +36,13 @@
     <record id="ticket_call_center_rule" model="ir.rule">
             <field name="name">Helpdesk/Ticket: Call Center</field>
             <field name="model_id" ref="model_quoate"/>
-            <field name="domain_force">['&amp;',('state', 'in', ['verified','new']),'|',('user_id', '=', False),('user_id', '=', user.id)]</field>
+            <field name="domain_force">['&amp;',('state', 'in', ['verified','new','canceled']),'|',('user_id', '=', False),('user_id', '=', user.id)]</field>
             <field name="groups" eval="[(4,ref('helpdesk_inherit.group_helpdesk_lite_call_center'))]"/>
     </record>
     <record id="ticket_sales_rule" model="ir.rule">
             <field name="name">Helpdesk/Ticket: Sales</field>
             <field name="model_id" ref="model_quoate"/>
-            <field name="domain_force">['&amp;',('state', 'in', ['verified','proposal']),'|',('user_id', '=', False),('user_id', '=', user.id)]</field>
+            <field name="domain_force">['&amp;',('state', 'in', ['verified','proposal','canceled']),'|',('user_id', '=', False),('user_id', '=', user.id)]</field>
             <field name="groups" eval="[(4,ref('helpdesk_inherit.group_helpdesk_lite_sales'))]"/>
     </record>
     <record id="ticket_leader_rule" model="ir.rule">
@@ -54,7 +54,7 @@
     <record id="ticket_leader_rule1" model="ir.rule">
             <field name="name">Quote: Leader</field>
             <field name="model_id" ref="model_quoate"/>
-            <field name="domain_force">['&amp;',('support_team.user_id', '=', user.id),('state', '=', 'proposal')]</field>
+            <field name="domain_force">['&amp;',('support_team.user_id', '=', user.id),('state', 'in', ['proposal','won','canceled'])]</field>
             <field name="groups" eval="[(4,ref('helpdesk_inherit.group_helpdesk_lite_leader'))]"/>
     </record>
     <record id="ticket_admin_rule" model="ir.rule">
@@ -79,7 +79,7 @@
     <record id="ticket_user_rule1" model="ir.rule">
             <field name="name">Quote: User</field>
             <field name="model_id" ref="model_quoate"/>
-            <field name="domain_force">['&amp;',('support_team.member_ids', 'in', user.id),('state', '=', 'proposal'),'|',('user_id', '=', False),('user_id', '=', user.id)]</field>
+            <field name="domain_force">['&amp;',('support_team.member_ids', 'in', user.id),('state', 'in', ['proposal','won','canceled']),'|',('user_id', '=', False),('user_id', '=', user.id)]</field>
             <field name="groups" eval="[(4,ref('helpdesk_lite.group_helpdesk_lite_user'))]"/>
     </record>
 <!--    <record id="ticket_user_rule2" model="ir.rule">-->
