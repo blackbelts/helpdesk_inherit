@@ -4,7 +4,7 @@
         <field name="model">helpdesk_lite.ticket</field>
         <field name="inherit_id" ref="helpdesk_lite.helpdesk_ticket_form_view"/>
         <field name="arch" type="xml">
-            <xpath expr="/form" position="inside">
+            <xpath expr="//field[@name='contact_name']" position="before">
                 <group>
                     <field name="type"/>
                 </group>
