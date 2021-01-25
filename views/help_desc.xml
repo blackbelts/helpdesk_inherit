@@ -5,13 +5,11 @@
         <field name="inherit_id" ref="helpdesk_lite.helpdesk_ticket_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='contact_name']" position="before">
-                <group>
+
                     <field name="type"/>
-                </group>
-                <group attrs="{'invisible': [('type', '!=','register')]}">
-                    <field name="username"/>
-                    <field name="password"  password="True"/>
-                </group>
+<!--                </group>-->
+                    <field name="username" attrs="{'invisible': [('type', '!=','register')]}"/>
+                    <field name="password"  password="True" attrs="{'invisible': [('type', '!=','register')]}"/>
             </xpath>
             <xpath expr="//button[@name='takeit']" position="attributes">
                 <attribute name="invisible">1</attribute>
