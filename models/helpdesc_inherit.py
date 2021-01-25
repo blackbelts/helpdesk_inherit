@@ -119,6 +119,11 @@ class HelpDeskTicket(models.Model):
             currentYear = datetime.today().strftime("%Y")
             currentMonth = datetime.today().strftime("%m")
             vals['name'] = 'COMP' + '/' + currentYear[2:4] + '/' + currentMonth + '/' +serial_no
+        else:
+            serial_no = self.env['ir.sequence'].next_by_code('comp_number')
+            currentYear = datetime.today().strftime("%Y")
+            currentMonth = datetime.today().strftime("%m")
+            vals['name'] = 'REGISTER' + '/' + currentYear[2:4] + '/' + currentMonth + '/' + serial_no
             return super(HelpDeskTicket, self).create(vals)
 
 class TicketTypes(models.Model):
@@ -158,4 +163,4 @@ class TicketApi(models.Model):
              'phone': data.get('phone'),'email_from': data.get('mail'), 'username': data.get('username'),
              'password': data.get('password')})
 
-        return ticket_id
+        return ticket_id.id
