@@ -158,4 +158,4 @@ class TicketApi(models.Model):
              'phone': data.get('phone'),'email_from': data.get('mail'), 'username': data.get('username'),
              'password': data.get('password')})
 
-        return ticket_id.id
+        return ticket_id
