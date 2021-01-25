@@ -114,6 +114,7 @@ class HelpDeskTicket(models.Model):
 
     @api.model
     def create(self, vals):
+        if self.type == "complain":
             serial_no = self.env['ir.sequence'].next_by_code('comp_number')
             currentYear = datetime.today().strftime("%Y")
             currentMonth = datetime.today().strftime("%m")
