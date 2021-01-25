@@ -222,7 +222,7 @@
               action="quoate_action" sequence="30"/>
     <menuitem name="Complaints" id="helpdesk_lite.menu_tickets_act" parent="helpdesk_lite.menu_root"
               action="helpdesk_lite.help_action"/>
-    <menuitem name="Registration" id="helpdesk_lite.menu_register_tickets_act" parent="helpdesk_lite.menu_root"
-              action="helpdesk_lite.help_register_action"/>
+    <menuitem name="Registration" id="menu_register_tickets_act" parent="helpdesk_lite.menu_root"
+              action="help_register_action"/>
 
 </odoo>
