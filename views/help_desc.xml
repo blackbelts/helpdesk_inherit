@@ -47,9 +47,25 @@
         <field name="name">Complaint</field>
         <field name="context">{'default_type': 'complain'}</field>
     </record>
-    <record model="ir.actions.act_window" id="helpdesk_lite.help_register_action">
+    <record model="ir.actions.act_window" id="help_register_action">
         <field name="name">Registration</field>
         <field name="context">{'default_type': 'register'}</field>
+        <field name="res_model">helpdesk_lite.ticket</field>
+        <!--        <field name="view_type">form</field>-->
+        <field name="view_mode">kanban,tree,form,graph</field>
+        <field name="search_view_id" ref="helpdesk_lite.view_helpdesk_ticket_filter"/>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('helpdesk_lite.helpdesk_ticket_kanban_view')}),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('helpdesk_lite.tree_ticket')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('helpdesk_lite.helpdesk_ticket_form_view')}),
+                          (0, 0, {'view_mode': 'graph', 'view_id': ref('helpdesk_lite.helpdesk_ticket_graph_view')}),
+                          ]"/>
+
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Your Ticket
+            </p>
+        </field>
     </record>
     <record id="sequence_complain_number" model="ir.sequence">
         <field name="name">comp_number</field>
