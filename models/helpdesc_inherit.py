@@ -102,6 +102,7 @@ class HelpDeskTicket(models.Model):
                               'Type', default='complain')
     username = fields.Char('UserName')
     password = fields.Char('Password')
+    phone = fields.Char('Mobile Number')
     complain=fields.Text('Complain')
     complain_number = fields.Char(string='Application Number', copy=False, index=True)
     source = fields.Selection([('online', 'Online'),
@@ -146,5 +147,14 @@ class TicketApi(models.Model):
             for rec in data.get('group'):
                 self.env['group.ticket'].create({'size':rec['size'],'range':group_dict.get(rec['age']),'group_id':ticket_id.id})
 
+
+        return ticket_id.id
+
+    @api.model
+    def register_ticket(self,data):
+        ticket_id = self.env['helpdesk_lite.ticket'].create(
+            {'name': 'Signup Mobile Application', 'type': 'register', 'contact_name': data.get('name'),
+             'phone': data.get('phone'),'email_from': data.get('mail'), 'username': data.get('username'),
+             'password': data.get('password')})
 
         return ticket_id.id

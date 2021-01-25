@@ -10,6 +10,7 @@
 <!--                </group>-->
                     <field name="username" attrs="{'invisible': [('type', '!=','register')]}"/>
                     <field name="password"  password="True" attrs="{'invisible': [('type', '!=','register')]}"/>
+                    <field name="phone" attrs="{'invisible': [('type', '!=','register')]}"/>
             </xpath>
             <xpath expr="//button[@name='takeit']" position="attributes">
                 <attribute name="invisible">1</attribute>
