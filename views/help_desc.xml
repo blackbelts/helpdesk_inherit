@@ -4,6 +4,15 @@
         <field name="model">helpdesk_lite.ticket</field>
         <field name="inherit_id" ref="helpdesk_lite.helpdesk_ticket_form_view"/>
         <field name="arch" type="xml">
+            <xpath expr="/form" position="inside">
+                <group>
+                    <field name="type"/>
+                </group>
+                <group attrs="{'invisible': [('type', '!=','register')]}">
+                    <field name="username"/>
+                    <field name="password"  password="True/>
+                </group>
+            </xpath>
             <xpath expr="//button[@name='takeit']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
@@ -36,6 +45,11 @@
     </record>
     <record model="ir.actions.act_window" id="helpdesk_lite.help_action">
         <field name="name">Complaint</field>
+        <field name="context">{'default_type': 'complain'}</field>
+    </record>
+    <record model="ir.actions.act_window" id="helpdesk_lite.help_register_action">
+        <field name="name">Registration</field>
+        <field name="context">{'default_type': 'register'}</field>
     </record>
     <record id="sequence_complain_number" model="ir.sequence">
         <field name="name">comp_number</field>
@@ -192,5 +206,7 @@
               action="quoate_action" sequence="30"/>
     <menuitem name="Complaints" id="helpdesk_lite.menu_tickets_act" parent="helpdesk_lite.menu_root"
               action="helpdesk_lite.help_action"/>
+    <menuitem name="Registration" id="helpdesk_lite.menu_register_tickets_act" parent="helpdesk_lite.menu_root"
+              action="helpdesk_lite.help_register_action"/>
 
 </odoo>

@@ -97,6 +97,11 @@ class StateHistory(models.Model):
 
 class HelpDeskTicket(models.Model):
     _inherit = 'helpdesk_lite.ticket'
+    type = fields.Selection([('complain', 'Complain'),
+                               ('register', 'Registration')],
+                              'Type', default='complain')
+    username = fields.Char('UserName')
+    password = fields.Char('Password')
     complain=fields.Text('Complain')
     complain_number = fields.Char(string='Application Number', copy=False, index=True)
     source = fields.Selection([('online', 'Online'),
